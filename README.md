@@ -12,7 +12,7 @@ N/A
 
 This page was built to be responsive on multiple screen sizes. By clicking anywhere on any of the code snippets in the cards, the entire snippet will be selected for easy copying.
 
-Link to deployed application: 
+Link to deployed application: https://ktunebe.github.io/css-snippets-mini-project/
 
 ![Screenshot of the CSS Snippets page](assets/images/css-snippet-page.png)
 
