@@ -1,0 +1,151 @@
+/* Found color for Carolina Blue at https://teamcolorcodes.com/north-carolina-tar-heels-colors/ */
+:root {
+      --outer-space: #33393f;
+      --light-blue: lightskyblue;
+      --gin: #e0eae4;
+      --carolina-blue: #7BAFD4;
+}
+
+/* Highlight color and background for selected text */
+::selection {
+      background-color: var(--light-blue);
+      color: var(--outer-space);
+}
+
+/* Sets 1rem to 10px to easily calculate all other font sizes using rem */
+html {
+      font-size: 62.5%;
+}
+
+/* Set bg color of whole page and default text color, make font family sans-serif, default text size 17.5px */
+body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1.75rem;
+      background-color: var(--outer-space);
+      color: var(--gin);
+}
+
+header {
+      text-align: center;
+      padding-bottom: 5rem;
+}
+
+/* Center header paragraph */
+header p {
+      max-width: 900px;
+      margin: 0 auto;
+      
+}
+
+/* Style headings */
+h1,
+h2,
+h3 {
+      color: var(--carolina-blue);
+}
+
+h1 {
+      font-size: 4rem;
+      font-weight: bold;
+}
+
+h2 {
+      font-size: 3rem;
+}
+
+h3 {
+      font-size: 2.5rem;
+}
+
+/* Making entire group of cards a flexbox */
+.card-catalog {
+      display: flex;
+      flex-flow: row wrap;
+      gap: 4.5rem 3rem;
+      margin: 0 auto;
+}
+
+/* Styling for each card */
+.card {
+      border: 2px dashed var(--gin); 
+      /* Flex each card to fill full column when on small screens */
+      flex: 1 0 100%;
+      max-width: 100%;
+      /* Transition for when screen size changes */
+      transition: all 500ms linear;
+      /* Make each card its own flexbox with column orientation */
+      display: flex;
+      flex-flow: column;
+      align-items: flex-start;
+}
+
+/* Styling for card header */
+.card-header {
+      /* Position header box overlaying top of card */
+      position: relative;
+      margin: -2rem 2.5rem 0 2.5rem;
+      padding: 1rem;
+      /* Stretch to fill width of card up to the specified margin, so will remain slightly narrower than rest of card */
+      align-self: stretch;
+      border: 2px solid var(--gin);
+      border-radius: 7px;
+      background-color: var(--outer-space);
+}
+
+/* Paragraph inside of each card */
+.card-description {
+      color: var(--carolina-blue);
+      margin: 1.5rem 1rem;
+}
+
+/* Styling for code box inside card */
+.card-code {
+      /* Box of code block will grow vertically to fit code */
+      flex-grow: 1;
+      margin: 1rem 1rem;
+      padding: 1rem;
+      /* Wraps overflowing code lines */
+      white-space: pre-wrap;
+      overflow: auto;
+      /* Stretch to fill box horizontally */
+      align-self: stretch;
+      border-radius: 10px;
+      /* Make code box another flex container that will center code within vertically */
+      display: flex;
+      align-items: center;
+      /* Background gradient for code box */
+      background-image: linear-gradient(
+                  rgba(4, 76, 128, 0.3) 0%,
+                  rgba(123, 175, 212, 0.6) 100%
+            );
+}
+
+
+/* Glowing borders on hover using box-shadow */
+.card:hover,
+.card:hover .card-header {
+      box-shadow: 0 0 15px var(--carolina-blue);
+      /* Transition for glowing borders */
+      transition: all .5s ease-in-out;
+}
+
+/* Selects full contents of code block when clicked */
+.card-code:active {
+      user-select: all;
+}
+
+/* Medium screen width 2 columns */
+@media (min-width: 768px) {
+      .card {
+            flex: 1 0 40%;
+            max-width: 50%;
+      }
+}
+
+/* Large screen 3 columns */
+@media (min-width: 992px) {
+      .card {
+            flex: 1 0 25%;
+            max-width: 33%;
+      }
+}
